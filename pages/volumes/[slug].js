@@ -9,6 +9,11 @@ export default function Volume() {
   const volume = volumes.find(({ slug }) => slug === query.slug);
   const volumeIndex = volumes.indexOf(volume);
   console.log(volumeIndex);
+
+  if (!volume) {
+    return;
+  }
+
   return (
     <>
       <VolumeDetail volume={volume} />
